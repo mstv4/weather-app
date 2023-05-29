@@ -1,0 +1,40 @@
+.weather-app {
+  text-align: center;
+  font-family: "Avant Garde", "Century Gothic", "AppleGothic", sans-serif;
+}
+
+.weather-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.weather-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.weather-icon {
+  font-size: 50px;
+}
+.weather-icon img {
+  width: 20%;
+}
+
+.temperature {
+  font-size: 30px;
+}
+
+.description {
+  margin-top: 10px;
+  font-weight: bold;
+}/*# sourceMappingURL=WeatherApp.css.map */

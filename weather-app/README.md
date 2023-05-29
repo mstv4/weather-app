@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Додаток "Weather App" є простим веб-додатком, який дозволяє користувачам переглядати поточну погоду та прогноз на кілька днів для введеного міста. Він використовує API погоди для отримання актуальних даних.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Основні вимоги до додатку:
+1. Відображення поточної погоди.
+2. Відображення прогнозу погоди на кілька днів, включаючи іконку погоди, температуру, опис погоди та іконку одягу для кожного дня в залежності від погоди.
+3. Можливість пошуку погоди за введеним містом.
+4. Обробка невалідних запитів та відображення повідомлення про помилку, якщо місто не знайдено.
 
-## Available Scripts
+Команди для запуску додатку:
+1. Завантажте всі файли додатку.
+2. Встановіть залежності за допомогою команди `npm install react`.
+3. Запустіть додаток за допомогою команди `npm start`.
+4. Відкрийте веб-браузер і перейдіть за адресою `http://localhost:3000` для перегляду додатку.
 
-In the project directory, you can run:
+Поточні файли виглядають наступним чином:
+1. `WeatherForm.js`:
+   - Цей файл містить компонент `WeatherForm`, який відповідає за форму пошуку міста і взаємодію з нею.
+   - Він містить функціональний компонент, який використовує хук `useState` для збереження стану міста.
+   - У компоненті є обробник події `handleCityChange`, який встановлює значення міста на основі введеного користувачем значення в поле введення.
+   - Також є обробник події `handleSearch`, який викликається при натисканні кнопки "Search" і викликає функцію `onSearch` з передачею міста в якості аргументу.
+   - Компонент має розмітку, яка відображає поле введення та кнопку пошуку.
 
-### `npm start`
+2. `WeatherForecast.js`:
+   - Цей файл містить компонент `WeatherForecast`, який відповідає за відображення прогнозу погоди.
+   - Він приймає пропси, такі як `weatherData`, `getWeatherIcon`, `getWeatherCloth` і `getUniqueDates`.
+   - У компоненті є розмітка, яка відображає поточну погоду та прогноз на кілька днів.
+   - Використовуються дані з `weatherData` для відображення іконки погоди, температури, опису погоди та іконки одягу.
+   - Функції `getWeatherIcon`, `getWeatherCloth` і `getUniqueDates` використовуються для отримання відповідних даних.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. `WeatherApp.js`:
+   - Цей файл містить головний компонент `WeatherApp`, який об'єднує решту компонентів та відповідає за основну логіку програми.
+   - Він використовує хук `useState` для збереження стану `weatherData` і `notFound`.
+   - У компоненті є функція `fetchWeatherData`, яка виконує запит до API для отримання даних про погоду на основі введеного міста.
+   - Компонент також містить функції `getWeatherIcon`, `getWeatherCloth` і `getUniqueDates` для отримання відповідних даних для відображення погоди і одягу.
+   - Цей компонент включає компоненти `WeatherForm` і `WeatherForecast`, передаючи їм відповідні пропси.
+   - У розмітці компонента відображається заголовок, форма пошуку та результати погоди або повідомлення про те, що місто не знайдено.
