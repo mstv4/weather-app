@@ -49,15 +49,15 @@ const WeatherApp = () => {
 
   const getWeatherCloth = (temperature) => {
     if (temperature > 20) {
-      return <i className="fas fa-tshirt"></i>; // Іконка шорт і футболки
+      return <i><img src="./images/icons/icon-shorts.png" className="cloth_logo" alt="icon cloth"/></i>; // Іконка шорт і футболки
     } else if (temperature >= 15 && temperature <= 20) {
-      return <i className="fas fa-hoodie"></i>; // Іконка штанів і худі
+      return <i><img src="./images/icons/icon-pants.png" className="cloth_logo" alt="icon cloth"/></i>; // Іконка штанів і худі
     } else if (temperature >= 5 && temperature < 15) {
-      return <i className="fas fa-jacket"></i>; // Іконка куртки
+      return <i><img src="./images/icons/icon-jacket.png" className="cloth_logo" alt="icon cloth"/></i>; // Іконка куртки
     } else if (temperature >= 0 && temperature < 5) {
-      return <i className="fas fa-coat"></i>; // Іконка пальто
+      return <i><img src="./images/icons/icon-coat.png" className="cloth_logo" alt="icon cloth"/></i>; // Іконка пальто
     } else {
-      return <i className="fas fa-warm-jacket"></i>; // Іконка теплої куртки
+      return <i><img src="./images/icons/icon-scarf.png" className="cloth_logo" alt="icon cloth"/></i>; // Іконка теплої куртки
     }
   };
 
@@ -74,10 +74,12 @@ const WeatherApp = () => {
 
   return (
     <div className="weather-app">
-      <h1>Weather App</h1>
       <WeatherForm onSearch={fetchWeatherData} />
       {notFound ? (
-        <p>City not found</p>
+        <>
+        <p>Ops! City not found</p>
+        <img src="./images/404.png" alt="logo not found"/>
+        </>        
       ) : (
         weatherData && (
           <WeatherForecast

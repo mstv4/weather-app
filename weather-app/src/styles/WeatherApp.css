@@ -1,40 +1,202 @@
+.App {
+  padding-bottom: 28px;
+}
+
 .weather-app {
+  margin-top: 28px;
   text-align: center;
   font-family: "Avant Garde", "Century Gothic", "AppleGothic", sans-serif;
+  width: 400px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background: #fff;
+  padding: 28px 32px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.weather-app h1 {
+  margin-bottom: 24px;
+}
+.weather-app p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.weather-app img {
+  width: 75%;
 }
 
-.weather-container {
-  border: 1px solid #ccc;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.weather-info {
+.search-container {
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.search-container input {
+  color: #06283d;
+  width: 80%;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 32px;
+}
+.search-container input::-webkit-input-placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+.search-container input::-moz-placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+.search-container input:-ms-input-placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+.search-container input::-ms-input-placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+.search-container input::placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+.search-container button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: #06283d;
+  background: #dff6ff;
+  border-radius: 50%;
+  font-size: 22px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.search-container button:hover {
+  color: #fff;
+  background: #168ad3;
+}
+.search-container .loc_logo {
+  width: 10%;
+}
+.search-container .search_logo {
+  width: 75%;
 }
 
-.weather-icon {
-  font-size: 50px;
+.weather-container {
+  margin-top: 25px;
 }
-.weather-icon img {
-  width: 20%;
+.weather-container .temperature,
+.weather-container .description {
+  font-size: 18px;
+  font-weight: 400;
 }
-
-.temperature {
-  font-size: 30px;
+.weather-container p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 24px;
 }
-
-.description {
-  margin-top: 10px;
-  font-weight: bold;
+.weather-container .current-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.weather-container .current-weather .weather-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.weather-container .current-weather .weather-icon img {
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.weather-container .current-weather .weather-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.weather-container .current-weather .weather-info .clothing-icon .cloth_logo {
+  width: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.weather-container .forecast .date {
+  display: block;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.weather-container .forecast .forecast-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.weather-container .forecast .forecast-item .weather-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.weather-container .forecast .forecast-item .weather-icon img {
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.weather-container .forecast .forecast-item .nextday-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+}
+.weather-container .forecast .forecast-item .nextday-weather .clothing-icon .cloth_logo {
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=WeatherApp.css.map */
